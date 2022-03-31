@@ -1,2 +1,2 @@
 # exam
-Gansin Sergey
+Ganzin Sergey
