@@ -1,64 +1,29 @@
-// Таск компиляции SASS в CSS
 const { src, dest, series, watch, parallel } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const del = require('del');
 const browserSync = require('browser-sync').create();
 
+// Таск компиляции SASS в CSS
 function buildSass() {
     return src('src/scss/**/*.scss')
         .pipe(sass({ includePaths: ['./node_modules'] }).on('error', sass.logError))
         .pipe(dest('src/css'))
-        .pipe(dest('dist/css'));
-        .pipe(browserSync.stream());
-}
-
-const { src, dest, series, watch, parallel } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const sourcemaps = require('gulp-sourcemaps');
-const browserSync = require('browser-sync').create();
-const del = require('del');
-
-const PATHS = {
-    src: 'src',
-    dist: 'dist',
-    scss: `${PATHS.src}/scss/**/*.scss`,
-    html: `${PATHS.src}/**/*.html`,
-    images: `${PATHS.src}/images/**/*.*`
-};
-
-// Таск компиляции SASS в CSS
-function buildSass() {
-    return src(PATHS.scss)
-        .pipe(sourcemaps.init())
-        .pipe(sass({ includePaths: ['./node_modules'] }).on('error', sass.logError))
-        .pipe(
-            postcss([
-                autoprefixer({
-                    grid: true,
-                    overrideBrowserslist: ['last 2 versions']
-                }),
-                cssnano()
-            ])
-        )
-        .pipe(sourcemaps.write())
-        .pipe(dest(`${PATHS.src}/css`))
-        .pipe(dest(`${PATHS.dist}/css`))
+        .pipe(dest('dist/css'))
         .pipe(browserSync.stream());
 }
 
 // Таск работы с html файлами
 function buildHtml() {
-    return src(PATHS.html)
-        .pipe(dest(PATHS.dist))
-        .pipe(browserSync.stream());
+    return src('src/**/*.html')
+        .pipe(dest('dist'))
+        .pipe(browserSync.stream());;
 }
 
 // Таск копирования статичных файлов
 function copy() {
-    return src([PATHS.images], { base: PATHS.src }).pipe(dest(PATHS.dist));
+    return src(['src/images/**/*.*'], { base: 'src' })
+      .pipe(dest('dist'))
+      .pipe(browserSync.stream());;
 }
 
 // Таск очистки dist
@@ -68,16 +33,16 @@ function cleanDist() {
 
 // Таск отслеживания изменения файлов
 function serve() {
-    watch(PATHS.scss, buildSass);
-    watch(PATHS.html, buildHtml);
+    watch('src/scss/**/*.scss', buildSass);
+    watch('src/**/*.html', buildHtml);
 }
 
 // Создание дев-сервера
 function createDevServer() {
     browserSync.init({
-        server: PATHS.src,
-        notify: false
-    })
+        server: 'src',
+      //  notify: false
+    });
 }
 
 exports.build = series(cleanDist, buildSass, buildHtml, copy);
