@@ -41,7 +41,7 @@ function serve() {
 function createDevServer() {
     browserSync.init({
         server: 'src',
-      //  notify: false
+        notify: false
     });
 }
 
