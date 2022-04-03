@@ -1,37 +1,9 @@
+@import './vendors';
+@import './variables';
+@import './common';
+@import './mixins';
+
 /* ===================================================== Ganzin Sergey ============================== */
-html {
-    box-sizing: border-box;
-}
-
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-
-body {
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    margin-top: auto;
-}
-
-
-html, body {
-    height: 100%;
-}
-
-
-a {
-    text-decoration: none;
-}
-
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-}
-
 
 .wrapper {
     display: flex;
@@ -52,27 +24,38 @@ a {
     position: relative;
     flex-shrink: 0;
     
-}
+    .container {
+        position: relative;
+        padding: 30px 0 130px;
+    }
 
+    &_main {
+        #{$this}__top {
+            display: none;
+        }
+    }
 
-.header .container {
-    position: relative;
-    padding: 30px 0 130px;
-}
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 120px;
 
+        @include _768() {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
 
-.header__top {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 120px;
-}
+    &__social {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
-
-.header__social {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    &__hero {
+        margin-bottom: 150px;
+    }
 }
 
 
@@ -105,7 +88,7 @@ a {
 
 
 .navigation__link:hover {
-    color: #00BF78;
+    color: $green;
 }
 
 
@@ -640,57 +623,4 @@ transition: 0.5s;
     text-align: center;
 }
 
-
-
-
-
-
-
-
-/* ================================================MEDIA ==========================================*/
-/* Large Devices, Wide Screens */ 
-@media only screen and (max-width: 1280px) { 
-} 
-/* Medium Devices, Desktops */ 
-@media only screen and (max-width: 992px) { 
-} 
-/* Small Devices, Tablets */ 
-@media only screen and (max-width: 768px) { 
-    .header__top {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-
-    .phone-info {
-        text-align: center;
-    }
-
-
-    .logo {
-        margin: auto;
-    }
-
-
-    .navigation {
-        flex-direction: column;
-    }
-
-
-    .navigation__list {
-        flex-direction: column;
-        align-items: center;
-    }
-    .navigation__item:not(:last-child) {
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-} 
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width: 480px) { 
-} 
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width: 320px) { 
-}
-
-
+@import './media';
