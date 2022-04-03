@@ -1,0 +1,32 @@
+html {
+    box-sizing: border-box;
+}
+
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+body {
+    font-size: 16px;
+    font-family: $font;
+    color: #333;
+    margin-top: auto;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
