@@ -294,20 +294,19 @@
 
 .popular {
      margin-top: 100px;
-
-     &__items {
-        display: flex;
-        flex-direction: row;
-        justify-content:flex-start;
-        flex-wrap: wrap;
-    }
-    &__block {
-        margin: 10px 15px;
-        max-width: 30%;
-    }
-
 }
 
+.popular__items {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+}
+
+.popular_block {
+    margin: 10px 15px;
+    max-width: 30%;
+}
 .popular-image {
     border-radius: 8px;
     max-width: 80%;
