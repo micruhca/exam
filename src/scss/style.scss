@@ -152,13 +152,12 @@
     padding: 0;
     list-style: none;
     display: flex;
+
+    &__li:not(:last-child) {
+        margin-right: 10px;
+    }
+
 }
-
-
-.social li:not(:last-child) {
-    margin-right: 10px;
-}
-
 
 .social__vertical {
     flex-direction: column;
