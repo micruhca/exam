@@ -84,9 +84,9 @@
 	                    
 	                   <div class="about__text">
 	                        <h1>О салоне</h1>
-	                        <p>Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</p>
-	                        <p>Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму,
-	                        а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</p>
+							<p>Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</p>
+	                        <div class="expandable-text"><p>Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму,
+								а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</p></div>
 	                   </div> 
 	
 
@@ -540,6 +540,9 @@
 		<!-- <script src="./js/main.js" type="module"></script> -->
 		<!--<script src="./js/todo.js"></script>-->
 	
+		
+		
+		
 		<script>
 			$(document).ready(function() {
 				$('.slider').slick({
@@ -548,6 +551,56 @@
 					nextArrow: '.slider-next'
 				});
 			});
+		</script>
+
+		<script>
+			const TogglePhrases = { 
+    Collapse: 'Свернуть', 
+    Expand: 'Развернуть' 
+}; 
+
+class ExpandableText { 
+  constructor(elem, maxLength = 150) { 
+    this.maxLength = maxLength; 
+    this.elem = elem;     
+    this.originalText = elem.textContent; 
+     
+    this.isToggle = false; 
+     
+    this.toggleBtn = document.createElement('button'); 
+    this.toggleBtn.textContent = TogglePhrases.Expand; 
+    this.toggleBtn.addEventListener('click', () => this.toggle()); 
+     
+    this.elem.textContent = this._getShortText(); 
+    this.elem.append(this.toggleBtn); 
+  } 
+   
+  toggle() { 
+    this.isToggle = !this.isToggle; 
+     
+    this.toggleBtn.textContent = this.isToggle 
+      ? TogglePhrases.Collapse 
+      : TogglePhrases.Expand; 
+     
+    this.elem.textContent = this.isToggle 
+      ? this.originalText 
+      : this._getShortText(); 
+     
+    this.elem.append(this.toggleBtn); 
+  } 
+   
+  _getShortText() { 
+    return (this.originalText.slice(0, this.maxLength)) + '...'; 
+  } 
+} 
+
+window.onload = () => { 
+  const textElems = document.querySelectorAll('.expandable-text'); 
+   
+  for (const el of textElems) { 
+    new ExpandableText(el, 100); 
+  } 
+}
 		</script>
 		
 		
