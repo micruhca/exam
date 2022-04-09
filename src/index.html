@@ -7,10 +7,31 @@
 	    <link rel="preconnect" href="https://fonts.googleapis.com">
 	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 	    <link rel="stylesheet" href="./css/style.css">
 	</head>
 	<body>
-	    
+		<!--<div class="container">
+			<form id="todo-form">
+				<input type="text" name="task" placeholder="Enter task...">
+				<button type="submit">Add</button>
+			</form>
+	
+			<header>
+				<h3>My tasks</h3>
+				<p id="empty-taks-message">List is empty</p>
+			</header>
+	
+			<ul id="todo-list">
+			</ul>
+	
+			<br>
+	
+			<button onclick="printActiveTasks()">Print active tasks</button>
+		</div> -->
+		
 	    <div class="wrapper">
 	        <header class="header">
 	            <div class="container">
@@ -91,7 +112,8 @@
 	
 
 	                <section class="work-information">
-	                    <div class="work-information__item">
+	                  <div class="work">
+						<div class="work-information__item">
 	                        <img src="./images/cabinet.png" alt="Image">
 	                        <p class="text_eighteen_600 text_bold text_align_center">Удобные кабинеты</p>
 	                        <p class="text_fourteen_500 text_align_center">Комфорт и стиль - принцип создания кабинетов салона красоты. Только эстетика и удобство для Вас</p>
@@ -111,8 +133,8 @@
 	                        <p class="text_eighteen_600 text_bold text_align_center">Опытные мастера</p>
 	                        <p class="text_fourteen_500 text_align_center">Работают только опытные мастера с чувством стиля. Смотрите наших специалистов в разделе Мастера</p>
 	                    </div>
-	
-
+					  </div>  
+						
 	                </section>
 	                
 	                <section class="popular">
@@ -298,7 +320,9 @@
 												<div class="photo_block_text"> 	                                
 													  <p class="text_eighteen_600 text_bold">Калилова Жанна</p> 
 													  <p class="text_fourteen_400">Визажист-стилист</p>
-													  <p class="text_twelve_300">ОПЫТ РАБОТЫ 5 ЛЕТ</p>
+													<div clsss="master__text">
+														<p class="text_twelve_300">ОПЫТ РАБОТЫ 5 ЛЕТ</p>  
+													</div>
 												</div>
 					                        </div>
 
@@ -327,15 +351,10 @@
 								     	</div>
 
 					</section>
-	
-					        <div class="masters">
-                              <!-- Пробный код вставляем здесь-->
-							</div>  
-					 </section>
 
+
+<!--
 	                <section class="works">
-	
-
 	                    <div class="head_works">
 	                       <div class="our">
 	                            <h1>Наши работы</h1>
@@ -351,15 +370,13 @@
 	                        </div>
 	                    </div>
 	                    
-	                    <div class="work_position">
+	                    <div class="photo_block">
 	                        <div class="our_works">
-	                                <button class="photo_block">
-	                                   <div class="button-overlay"></div>
-	                                        <img src="./images/work1.png" alt="Image" class="image_class_photo">
-	                                </button>
-	
-
-	
+								
+	                            <button class="photo_block">
+									<div class="button-overlay"></div>
+										 <img src="./images/work1.png" alt="Image" class="image_class_photo">
+								 </button>
 
 	                            <button class="photo_block">
 	                               <div class="button-overlay"></div>
@@ -381,7 +398,50 @@
 	                    </div>
 	                
 	                </section>
-	
+
+				-->
+
+				<section class="section">
+					<div class="container">
+
+						<div class="section__header">
+							<div class="our">
+								<h1>Наши работы</h1>
+							</div>
+								<div class="section__actions">
+									<button class="slider-prev"><img src="./images/left.png" alt="Image" class="Prev"></button>
+									<button class="slider-next"><img src="./images/right.png" alt="Image" class="Next"></button>
+								</div>
+
+						</div>
+						
+						<div class="section__inner">
+
+							<div class="slider">
+								<div class="slider__item">
+									<a data-fancybox="gallery" href="./images/work1.png"><img src="./images/work1.png" alt=""></a>
+								</div>
+
+								<div class="slider__item">
+									<a data-fancybox="gallery" href="./images/work2.png"><img src="./images/work2.png" alt=""></a>
+								</div>
+
+								<div class="slider__item">
+									<a data-fancybox="gallery" href=./images/work3.png""><img src="./images/work3.png" alt=""></a>
+								</div>
+
+								<div class="slider__item">
+									<a data-fancybox="gallery" href="./images/work4.png"><img src="./images/work4.png" alt=""></a>
+								</div>
+								<div class="slider__item">
+									<a data-fancybox="gallery" href="./images/work4.png"><img src="./images/work4.png" alt=""></a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</section>
+				
 
 	                <section class="brands">
 	
@@ -399,7 +459,8 @@
 	                        <img src="./images/brand5.png" alt="" class="brands_logo_style">
 	                    </div>    
 	                </section>
-	
+		
+
 
 	                <section class="contacts">
 	                    <div class="contacts_info">
@@ -446,10 +507,6 @@
 	            </section>
 	
 
-	
-
-	
-
 	        </main>
 	
 
@@ -476,7 +533,24 @@
 	        </footer>
 	    </div>
 	
-
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+		
+		<!-- <script src="./js/main.js" type="module"></script> -->
+		<!--<script src="./js/todo.js"></script>-->
+	
+		<script>
+			$(document).ready(function() {
+				$('.slider').slick({
+					slidesToShow: 4,
+					prevArrow: '.slider-prev',
+					nextArrow: '.slider-next'
+				});
+			});
+		</script>
+		
+		
 	</body>
 	</html>
 
