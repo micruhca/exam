@@ -463,6 +463,9 @@
 
 .brands-box {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 .brands_logo {
