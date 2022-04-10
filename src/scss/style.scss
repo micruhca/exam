@@ -280,6 +280,7 @@
 }
 /* ================== Информация  ================ */
 .work-information {
+ margin-top: 100px;
  display: flex;
 
 }
@@ -361,6 +362,7 @@
 }
 /*======================== Мастера =====================*/
 .masters {
+    margin-top: 100px;
     background-color: #F8F6F7;
     max-width: 1100px;
   }
@@ -425,7 +427,9 @@
     margin-top:50px;
   }
 /*=================== Работа ====================*/
-
+.section{
+    margin-top: 100px;
+}
 .section__header {
     display: flex;
     justify-content: space-between;
