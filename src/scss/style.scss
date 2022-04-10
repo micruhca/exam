@@ -198,8 +198,14 @@
     width: 50%;
 }
 
+.about__video {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 20%;
+}
+
 .video {
-    min-width: 297px;
+    min-width: 296px;
     max-width: 445px;
     width: 100%;
     height: 297px;
@@ -214,7 +220,7 @@
     cursor: pointer;
 }
 
-
+/*
 .video-overlay {
     background: #000;
     opacity: 0.2;
@@ -224,7 +230,7 @@
     top: 0;
     bottom: 0;
     z-index: 2;
-}
+}*/
 
 
 .video svg {
@@ -266,7 +272,12 @@
 .video:hover svg path {
     stroke: yellow;
 }
-
+.background-image{
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    object-position: bottom;
+}
 /* ================== Информация  ================ */
 .work {
     display: flex;
@@ -452,9 +463,8 @@
 
 
 .brands_logo {
-    display: flex;
     width: 80%;
-    flex-direction: row;
+    flex-direction: wrap;
     justify-content: space-between;
 }
 
@@ -568,6 +578,13 @@
 
 
 /* ================================ text FONT-SIZE================================= */
+
+.text_twenty_100{
+    font-size: 16px;
+    font-weight: 400, Regular;
+
+}
+
 .text_twenty_400 {
     font-size: 20px;
     font-weight: 400, Regular;    
@@ -610,7 +627,7 @@
 
 
 .text_twelve_300 {
-    margin-top:30px;
+    margin-top: 30px;
     font-size: 12px;
     font-weight: 300, lighter;    
 }
