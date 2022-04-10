@@ -2,7 +2,7 @@
 	<html lang="en">
 	<head>
 	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	    <title>Мир красоты</title>
 	    <link rel="preconnect" href="https://fonts.googleapis.com">
 	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +11,8 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 	    <link rel="stylesheet" href="./css/style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 	</head>
 	<body>
 		<!--<div class="container">
@@ -674,6 +676,12 @@
 	        </footer>
 	    </div>
 	
+        <script>
+			$('.nav-toggle').on('click', function(){
+			  $('#menu').toggleClass('active');
+			});
+			</script>
+
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 		<script src="./js/expandable.js" type="module"></script>
@@ -697,7 +705,11 @@
 		
 
 		<!------------------------------------Галерея фото--------->		
-
+		<script>
+			alert( 'Первый кролик!' );
+			alert( 'Второй кролик!' );
+			alert( 'Третий кролик!' );
+		  </script>
 
 		
 	</body>
