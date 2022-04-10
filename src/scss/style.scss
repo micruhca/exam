@@ -279,15 +279,15 @@
     object-position: bottom;
 }
 /* ================== Информация  ================ */
+.work-information {
+ display: flex;
+
+}
+
 .work {
     display: flex;
+    justify-content: flex-end
   }
-
-.work-information {
-    margin-top: 105px;
-    display: flex;
-    flex: 1;
-}
 
 .work-information__item {
     min-height: 170px;
@@ -461,6 +461,9 @@
     margin-top: 100px;
 }
 
+.brands-box {
+    display: flex;
+}
 
 .brands_logo {
     width: 80%;
