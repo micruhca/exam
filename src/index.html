@@ -84,9 +84,10 @@
 	                    
 	                   <div class="about__text">
 	                        <h1>О салоне</h1>
-							<p>Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</p>
-	                        <div class="expandable-text"><p>Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму,
-								а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</p></div>
+							<p class="text_twenty_400">Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</p>
+						  <div class="expandable-text">Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму, а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.
+
+					     </div> 
 	                   </div> 
 	
 
@@ -540,54 +541,6 @@
 					</section>
 
 
-<!--
-	                <section class="works">
-	                    <div class="head_works">
-	                       <div class="our">
-	                            <h1>Наши работы</h1>
-	                        </div>
-	                       
-	                        <div class="left_right_pos">
-	                            <div class="ellipse">
-	                                <img src="./images/left.png" alt="Image" class="left_right">
-	                            </div>
-	                            <div class="ellipse">
-	                                <img src="./images/right.png" alt="Image" class="left_right">
-	                            </div>
-	                        </div>
-	                    </div>
-	                    
-	                    <div class="photo_block">
-	                        <div class="our_works">
-								
-	                            <button class="photo_block">
-									<div class="button-overlay"></div>
-										 <img src="./images/work1.png" alt="Image" class="image_class_photo">
-								 </button>
-
-	                            <button class="photo_block">
-	                               <div class="button-overlay"></div>
-	                                    <img src="./images/work2.png" alt="Image" class="image_class_photo">
-	                            </button>
-	
-
-	                            <button class="photo_block">
-	                               <div class="button-overlay"></div>
-	                                    <img src="./images/work3.png" alt="Image" class="image_class_photo">
-	                            </button>
-	
-
-	                            <button class="photo_block">
-	                               <div class="button-overlay"></div>
-	                                    <img src="./images/work4.png" alt="Image" class="image_class_photo">
-	                            </button>
-	                        </div>
-	                    </div>
-	                
-	                </section>
-
-				-->
-
 				<section class="section">
 					<div class="container">
 
@@ -721,139 +674,30 @@
 	    </div>
 	
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+		<script src="./js/expandable.js" type="module"></script>
+
+		<script src="./js/tabs.js" type="module"></script>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+		<script src="./js/galerey.js" type="module"></script>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 		
 		<!-- <script src="./js/main.js" type="module"></script> -->
 		<!--<script src="./js/todo.js"></script>-->
 	
 		
+		<!------------------------------------(Expandable Text)-(Tabs)---------->
 		
 		
-		<script>
-			$(document).ready(function() {
-				$('.slider').slick({
-					slidesToShow: 4,
-					prevArrow: '.slider-prev',
-					nextArrow: '.slider-next'
-				});
-			});
-		</script>
+		<!-------------------------------------(Tabs)---------->
+		
 
-		<script>
-			const TogglePhrases = { 
-    Collapse: 'Свернуть', 
-    Expand: 'Развернуть' 
-}; 
+		<!------------------------------------Галерея фото--------->		
 
-class ExpandableText { 
-  constructor(elem, maxLength = 150) { 
-    this.maxLength = maxLength; 
-    this.elem = elem;     
-    this.originalText = elem.textContent; 
-     
-    this.isToggle = false; 
-     
-    this.toggleBtn = document.createElement('button'); 
-    this.toggleBtn.textContent = TogglePhrases.Expand; 
-    this.toggleBtn.addEventListener('click', () => this.toggle()); 
-     
-    this.elem.textContent = this._getShortText(); 
-    this.elem.append(this.toggleBtn); 
-  } 
-   
-  toggle() { 
-    this.isToggle = !this.isToggle; 
-     
-    this.toggleBtn.textContent = this.isToggle 
-      ? TogglePhrases.Collapse 
-      : TogglePhrases.Expand; 
-     
-    this.elem.textContent = this.isToggle 
-      ? this.originalText 
-      : this._getShortText(); 
-     
-    this.elem.append(this.toggleBtn); 
-  } 
-   
-  _getShortText() { 
-    return (this.originalText.slice(0, this.maxLength)) + '...'; 
-  } 
-} 
 
-window.onload = () => { 
-  const textElems = document.querySelectorAll('.expandable-text'); 
-   
-  for (const el of textElems) { 
-    new ExpandableText(el, 100); 
-  } 
-}
-		</script>
-
-<!------------------------------------Цены прайс--------->
-<script>
-	class TabItem { 
-  constructor(link, content) { 
-    this.link = link; 
-    this.content = content; 
-  } 
-   
-  onClick(callback) { 
-    this.link.addEventListener('click', () => callback()); 
-  } 
-   
-  activate() { 
-    this._toggle(true);   
-  } 
-   
-  deactivate() { 
-    this._toggle(false); 
-  } 
-   
-  _toggle(activate) { 
-    this.link.classList.toggle('active', activate); 
-    this.content.classList.toggle('active', activate); 
-  } 
-} 
-
-class TabsManager { 
-  constructor(tabsElem) { 
-    this.tabs = []; 
-    this.activeTab = null; 
-     
-    this.init(tabsElem);     
-    this.activateTab(this.tabs[0]); 
-  } 
-   
-  init(tabsElem) { 
-    const links = tabsElem.querySelectorAll('.tabs__links li'); 
-    const contents = tabsElem.querySelectorAll('.tabs__item'); 
-         
-    for (let i = 0; i < links.length; i++) { 
-      const tab = new TabItem(links[i], contents[i]); 
-      this.tabs.push(tab); 
-       
-      tab.onClick(() => this.activateTab(tab));   
-    } 
-  } 
-   
-  activateTab(tab) { 
-    if (this.activeTab) { 
-      this.activeTab.deactivate(); 
-    } 
-    this.activeTab = tab; 
-    this.activeTab.activate(); 
-  }
-} 
-
-window.onload = function() { 
-  const tabsElem = document.getElementById('myTabs'); 
-  new TabsManager(tabsElem); 
-}
-</script>
 		
 	</body>
 	</html>
-
-
-
