@@ -17,22 +17,15 @@
 }
 
 
-/* ===================================================== HEADER ============================== */
+/* ================ Шапка ============================== */
 .header {
     background: #F8F6F7 url('./images/header-bg.png');
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
-    
     .container {
         position: relative;
         padding: 30px 0 130px;
-    }
-
-    &_main {
-        #{$this}__top {
-            display: none;
-        }
     }
 
     &__top {
@@ -51,10 +44,6 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-    }
-
-    &__hero {
-        margin-bottom: 150px;
     }
 }
 
@@ -159,13 +148,12 @@
     padding: 0;
     list-style: none;
     display: flex;
+
+    &__li:not(:last-child) {
+        margin-right: 10px;
+    }
+
 }
-
-
-.social li:not(:last-child) {
-    margin-right: 10px;
-}
-
 
 .social__vertical {
     flex-direction: column;
@@ -196,9 +184,28 @@
 }
 
 
-/*================================================ MAIN ==================================*/
+/*=============== MAIN =================================*/
+
+.about {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;   
+}
+
+.about__text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.about__video {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 20%;
+}
+
 .video {
-    min-width: 297px;
+    min-width: 296px;
     max-width: 445px;
     width: 100%;
     height: 297px;
@@ -213,7 +220,7 @@
     cursor: pointer;
 }
 
-
+/*
 .video-overlay {
     background: #000;
     opacity: 0.2;
@@ -223,7 +230,7 @@
     top: 0;
     bottom: 0;
     z-index: 2;
-}
+}*/
 
 
 .video svg {
@@ -247,7 +254,6 @@
     transition: 0.15s;
 }
 
-
 .video:after {
     content: 'Короткое видео о нас';
     font-size: 16px;
@@ -266,29 +272,23 @@
 .video:hover svg path {
     stroke: yellow;
 }
-    
-.about {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;   
-
-
+.background-image{
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    object-position: bottom;
 }
-
-
-.about__text {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
-
-
+/* ================== Информация  ================ */
 .work-information {
-    margin-top: 105px;
-    display: flex;
-    flex: 1;
+ margin-top: 100px;
+ display: flex;
+
 }
 
+.work {
+    display: flex;
+    justify-content: flex-end
+  }
 
 .work-information__item {
     min-height: 170px;
@@ -299,11 +299,11 @@
     margin: 20px;
 }
 
+/* ================= Популярные услуги ============== */
 
 .popular {
-        margin-top: 100px;
+     margin-top: 100px;
 }
-
 
 .popular__items {
     display: flex;
@@ -312,13 +312,10 @@
     flex-wrap: wrap;
 }
 
-
 .popular_block {
     margin: 10px 15px;
     max-width: 30%;
 }
-
-
 .popular-image {
     border-radius: 8px;
     max-width: 80%;
@@ -332,6 +329,7 @@
     flex-direction: column;
 }
 
+/*====================== Услуги и цены ==================*/
 
 .price {
     display: flex;
@@ -357,24 +355,53 @@
     
 }
 
-
  .text_price_point {
     color: #21694f;
     font-size: 20px;
     font-weight: bold;
 }
+/*======================== Мастера =====================*/
 .masters {
+    margin-top: 100px;
     background-color: #F8F6F7;
     max-width: 1100px;
-}
+  }
+
 .masters_team {
     display: flex;
+    justify-content: space-between;
+  }
+
+.master_photoblock {
+    width: 100%;
+    height: auto;
     position: relative;
-
-
-}
-
-
+    line-height: 0;
+  }
+.master_photoblock img {
+    width:100%;
+    height: auto;
+  }
+.master_photoblock:after {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    opacity:0;
+    content: 'Записаться к мастеру';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    width:100%;
+    height: 100%;
+    border-radius: 5px;
+    background: rgba(0,0,0,.5);
+    transition: opacity .33s;
+  }
+.master_photoblock:hover:after {
+    opacity: 1;
+    left:0;
+  }
 .photo_block {
     max-width: 25%;
     margin: 20px 15px;
@@ -382,63 +409,54 @@
     transition: transform 0.2s;
     border: none;
     background-color: transparent;
-}
-
-
+  }
 .image_class_photo {
-    max-width: 90%;
-    max-height: 90%;
-}
-
-
+    max-width: 80%;
+    max-height: 80%;
+  }
+  
 .image_class_photo:hover {
     max-width: 100%;
     max-height: 100%;
     transition: 0.5s;
+  }
+.photo_block_text {
+      
+  }
+.master__text{
+    margin-top:50px;
+  }
+/*=================== Работа ====================*/
+.section{
+    margin-top: 100px;
 }
-
-
-.head_works {
+.section__header {
     display: flex;
-    flex-direction: row;
-    align-items: center;    
     justify-content: space-between;
 }
-
-
-.left_right {
-    margin: 15px;
-    height: 15px;
-    width: 15px;
+.sector__actions {
+    
+    align-items: flex-end;
+    flex-wrap: wrap-reverse;
 }
 
+.Prev,.Next{
+    width: 30px; 
+    height: 30px; 
+    border: 0px; 
+}
+.slider {
+    &__item{
+        padding: 0 15px;
+        
+        img {
+            width: 100%;
+        }
 
-.ellipse {
-    border-radius: 50%;
-    align-items: center;
+    }
 }
 
-
-.ellipse:hover {
-background-color: #F8F6F7;
-width: 40px;
-height: 40px;
-transition: 0.5s;
-}
-
-
-.left_right_pos {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-}
-
-
-.our_works {
-    display: flex;        
-    flex-direction: row;
-}
-
+/*================== Бренды ===========*/
 
 .brands {
     display: flex;
@@ -447,11 +465,16 @@ transition: 0.5s;
     margin-top: 100px;
 }
 
+.brands-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
 
 .brands_logo {
-    display: flex;
     width: 80%;
-    flex-direction: row;
+    flex-direction: wrap;
     justify-content: space-between;
 }
 
@@ -526,13 +549,12 @@ transition: 0.5s;
     max-width: 100%;
     width: 80%;
 }
+/*======================================================= Slader =============================*/
 
 
 
 
-
-
-/*======================================================= FOOTER =============================*/
+/*======================================================= Подвал =============================*/
 
 
 .info {
@@ -566,6 +588,13 @@ transition: 0.5s;
 
 
 /* ================================ text FONT-SIZE================================= */
+
+.text_twenty_100{
+    font-size: 16px;
+    font-weight: 400, Regular;
+
+}
+
 .text_twenty_400 {
     font-size: 20px;
     font-weight: 400, Regular;    
@@ -579,20 +608,17 @@ transition: 0.5s;
 .text_eighteen_600 {
     font-size: 18px;
     font-weight: 600, Semi Bold;    
-
-
 }
 
 
 .text_eighteen_500 {
     font-size: 18px;
     font-weight: 500, Semi Bold;    
-
-
 }
 
 
 .text_sixteen_400 {
+    margin-top: 30px;
     font-size: 16px;
     font-weight: 400, Regular;    
 }
@@ -611,6 +637,7 @@ transition: 0.5s;
 
 
 .text_twelve_300 {
+    margin-top: 30px;
     font-size: 12px;
     font-weight: 300, lighter;    
 }
@@ -624,3 +651,35 @@ transition: 0.5s;
 }
 
 @import './media';
+
+
+.tabs { 
+    &__links { 
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline-block;
+            margin-right: 20px; 
+            font-size: 14px;  
+            font-weight: bold;
+        }
+        
+      .active { 
+        color: #00BF78; 
+        font-size: 14px;
+        font-weight: 600;
+        transition: .15s color;
+      } 
+    } 
+     
+    &__item { 
+      display: none; 
+       
+      &.active { 
+        display: block; 
+      } 
+    } 
+  }
+
+  

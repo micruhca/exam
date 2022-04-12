@@ -2,15 +2,36 @@
 	<html lang="en">
 	<head>
 	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	    <title>Мир красоты</title>
 	    <link rel="preconnect" href="https://fonts.googleapis.com">
 	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 	    <link rel="stylesheet" href="./css/style.css">
 	</head>
 	<body>
-	    
+		<!--<div class="container">
+			<form id="todo-form">
+				<input type="text" name="task" placeholder="Enter task...">
+				<button type="submit">Add</button>
+			</form>
+	
+			<header>
+				<h3>My tasks</h3>
+				<p id="empty-taks-message">List is empty</p>
+			</header>
+	
+			<ul id="todo-list">
+			</ul>
+	
+			<br>
+	
+			<button onclick="printActiveTasks()">Print active tasks</button>
+		</div> -->
+		
 	    <div class="wrapper">
 	        <header class="header">
 	            <div class="container">
@@ -19,14 +40,15 @@
 	                    
 	                    <nav class="navigation">
 	                        <ul class="navigation__list">
-	                            <li class="navigation__item"><a href="#" class="navigation__link">Услуги и цены</a></li>
-	                            <li class="navigation__item"><a href="#" class="navigation__link">Мастера</a></li>
-	                            <li class="navigation__item"><a href="#" class="navigation__link">Наши работы</a></li>
-	                            <li class="navigation__item"><a href="#" class="navigation__link">О нас</a></li>
-	                            <li class="navigation__item"><a href="#" class="navigation__link">Контакты</a></li>
+	                            <li class="navigation__item"><a href="#top" class="navigation__link">Услуги и цены</a></li>
+	                            <li class="navigation__item"><a href="#masters" class="navigation__link">Мастера</a></li>
+	                            <li class="navigation__item"><a href="#section" class="navigation__link">Наши работы</a></li>
+	                            <li class="navigation__item"><a href="#about" class="navigation__link">О нас</a></li>
+	                            <li class="navigation__item"><a href="#contacts" class="navigation__link">Контакты</a></li>
 	                        </ul>
 	                    </nav>
 	
+
 
 	                    <div class="phone-info">
 	                        <a href="tel:84996861762">8 (499) 686-17-62</a>
@@ -59,31 +81,36 @@
 	<!-------------------------------------- MAIN ------------------------------------------------->
 	        <main class="main">
 	            <div class="container">
+					<p><a name="about"></a></p>
 	                <section class="about">
 	                    
 	                   <div class="about__text">
 	                        <h1>О салоне</h1>
-	                        <p>Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</p>
-	                        <p>Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму,
-	                        а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</p>
+							<p class="text_twenty_400">Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</p>
+						  <div class="expandable-text">Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму, а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.
+
+					     </div> 
 	                   </div> 
 	
 
-	                   <button type="button" class="video" style="background-image: url('./images/bootle.png');">
-	                    <div class="video-overlay"></div>
-	                    <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-	                        <g clip-path="url(#clip0_2_1683)">
-	                        <g opacity="0.75">
-	                        <path opacity="0.75" d="M31.0196 60.3764C47.2191 60.3764 60.3514 47.2441 60.3514 31.0446C60.3514 14.8451 47.2191 1.71278 31.0196 1.71278C14.8201 1.71278 1.68774 14.8451 1.68774 31.0446C1.68774 47.2441 14.8201 60.3764 31.0196 60.3764Z" stroke="white" stroke-width="2"/>
-	                        <path opacity="0.75" d="M26.8013 23.7378L39.4582 31.0453L26.8013 38.3528V23.7378Z" stroke="white" stroke-width="2"/>
-	                        </g>
-	                        </g>
-	                        <defs>
-	                        <clipPath id="clip0_2_1683">
-	                        <rect width="60.2709" height="60.2709" fill="white" transform="translate(0.884857 0.90989)"/>
-	                        </clipPath>
-	                        </defs>
-	                    </svg>                        
+	                   <button type="button" class="video" style="background-image: url('./images/123.jpg');">
+	                    <div class="video-overlay">
+							<svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0_2_1683)">
+								<g opacity="0.75">
+								<path opacity="0.75" d="M31.0196 60.3764C47.2191 60.3764 60.3514 47.2441 60.3514 31.0446C60.3514 14.8451 47.2191 1.71278 31.0196 1.71278C14.8201 1.71278 1.68774 14.8451 1.68774 31.0446C1.68774 47.2441 14.8201 60.3764 31.0196 60.3764Z" stroke="white" stroke-width="2"/>
+								<path opacity="0.75" d="M26.8013 23.7378L39.4582 31.0453L26.8013 38.3528V23.7378Z" stroke="white" stroke-width="2"/>
+								</g>
+								</g>
+								<defs>
+								<clipPath id="clip0_2_1683">
+								<rect width="60.2709" height="60.2709" fill="white" transform="translate(0.884857 0.90989)"/>
+								</clipPath>
+								</defs>
+							</svg> 
+
+						</div>
+                      
 	                </button>
 	
 
@@ -91,7 +118,8 @@
 	
 
 	                <section class="work-information">
-	                    <div class="work-information__item">
+	                  <div class="work">
+						<div class="work-information__item">
 	                        <img src="./images/cabinet.png" alt="Image">
 	                        <p class="text_eighteen_600 text_bold text_align_center">Удобные кабинеты</p>
 	                        <p class="text_fourteen_500 text_align_center">Комфорт и стиль - принцип создания кабинетов салона красоты. Только эстетика и удобство для Вас</p>
@@ -111,8 +139,8 @@
 	                        <p class="text_eighteen_600 text_bold text_align_center">Опытные мастера</p>
 	                        <p class="text_fourteen_500 text_align_center">Работают только опытные мастера с чувством стиля. Смотрите наших специалистов в разделе Мастера</p>
 	                    </div>
-	
-
+					  </div>  
+						
 	                </section>
 	                
 	                <section class="popular">
@@ -165,211 +193,408 @@
 
 	                    </div>
 	                </section>
-	
 
-	                <section class="services_and_price">
-	                    <h1>Услуги и цены</h1>
-	                    <div class="services">
-	                        <nav class="navigation">
-	                            <ul class="navigation__list">
-	                                <li class="navigation__item"><a href="#" class="navigation__link nav_link_text">Стрижка и укладка</a></li>
-	                                <li class="navigation__item"><a href="#" class="navigation__link nav_link_text">Косметология</a></li>
-	                                <li class="navigation__item"><a href="#" class="navigation__link nav_link_text">Маникюр и педикюр</a></li>
-	                                <li class="navigation__item"><a href="#" class="navigation__link nav_link_text">Макияж</a></li>
-	                                <li class="navigation__item"><a href="#" class="navigation__link nav_link_text">Брови и ресницы</a></li>
-	                                <li class="navigation__item"><a href="#" class="navigation__link nav_link_text">Массаж</a></li>
-	                            </ul>
-	                        </nav>
-	                        <div class="price">
-	                            <div class="price_block">
-	                                <div class="price_text">
-	                                    <p class="text_eighteen_500 text_bold">Женская стрижка</p>
-	                                    <p class="text_fourteen_400">Короткие волосы</p>
-	                                </div>
-	                                <div class="price_point">
-	                                    <p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
-	                                </div>
-	                            </div>
-	
-
-	                            <div class="price_block">
-	                                <div class="price_text">
-	                                    <p class="text_eighteen_500 text_bold">Стрижка бороды и усов</p>
-	                                    <p class="text_fourteen_400">Короткие волосы</p>
-	                                </div>
-	                                <div class="price_point">
-	                                    <p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
-	                                </div>
-	                            </div>
-	
-
-	                            <div class="price_block">
-	                                <div class="price_text">
-	                                    <p class="text_eighteen_500 text_bold">Мужская стрижка</p>
-	                                    <p class="text_fourteen_400">Короткие волосы</p>
-	                                </div>
-	                                <div class="price_point">
-	                                    <p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
-	                                </div>
-	                            </div>
-	
-
-	                            <div class="price_block">
-	                                <div class="price_text">
-	                                    <p class="text_eighteen_500 text_bold">Экспресс укладкаа</p>
-	                                    <p class="text_fourteen_400">Короткие волосы</p>
-	                                </div>
-	                                <div class="price_point">
-	                                    <p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
-	                                </div>
-	                            </div>
-	
-
-	                            <div class="price_block">
-	                                <div class="price_text">
-	                                    <p class="text_eighteen_500 text_bold">Детский Стиль</p>
-	                                    <p class="text_fourteen_400">Короткие волосы</p>
-	                                </div>
-	                                <div class="price_point">
-	                                    <p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
-	                                </div>
-	                            </div>
-	
-
-	                            <div class="price_block">
-	                                <div class="price_text">
-	                                    <p class="text_eighteen_500 text_bold">Укладка дневная</p>
-	                                    <p class="text_fourteen_400">Короткие волосы</p>
-	                                </div>
-	                                <div class="price_point">
-	                                    <p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
-	                                </div>
-	                            </div>
-	
-
-	                            <div class="price_block">
-	                                <div class="price_text">
-	                                    <p class="text_eighteen_500 text_bold">Креативный Стиль</p>
-	                                    <p class="text_fourteen_400">Короткие волосы</p>
-	                                </div>
-	                                <div class="price_point">
-	                                    <p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
-	                                </div>
-	                            </div>
-	
-
-	                            <div class="price_block">
-	                                <div class="price_text">
-	                                    <p class="text_eighteen_500 text_bold">Прическа вечерняя (свадебная)
-	                                    </p>
-	                                    <p class="text_fourteen_400">Короткие волосы</p>
-	                                </div>
-	                                <div class="price_point">
-	                                    <p class="text_twenty_600 text_align_center text_price_point">3000 ₽</p>
-	                                </div>
-	                            </div>
-	
-
-	                        </div>
-	                    </div>
+					<p><a name="services_and_price"></a></p>
+					<section class="services_and_price">
+						   <h1>Услуги и цены</h1>
+						       <div id="myTabs" class="tabs"> 
+							          <ul class="tabs__links"> 
+							          <li>Стрижка и укладка</li> 
+							          <li>Косметология</li> 
+							          <li>Маникюр и педикюр</li> 
+							          </ul> 
+							 
+							         <div class="tabs__content"> 
+							            <div class="tabs__item">
+											<div class="price">
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Женская стрижка</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Стрижка бороды и усов</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Мужская стрижка</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Экспресс укладкаа</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Детский Стиль</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Укладка дневная</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Креативный Стиль</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Прическа вечерняя (свадебная)
+														</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">3000 ₽</p>
+													</div>
+												</div>
+					
+				
+											</div>
+										</div> 
+							            <div class="tabs__item">
+											<div class="price">
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Консультация врача-косметолога</p>
+														<p class="text_fourteen_400">первичная</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">2100 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Консультация врача-косметолога</p>
+														<p class="text_fourteen_400">повторная</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1800 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Консультация врача-косметолога</p>
+														<p class="text_fourteen_400">(60 мин)</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">2100 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Консультация врача-косметолога</p>
+														<p class="text_fourteen_400">(30 минут)</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">650 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Консультация</p>
+														<p class="text_fourteen_400">кандидата медицинских наук</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">2600 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Диагностика кожи</p>
+														<p class="text_fourteen_400">Антера</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">500 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Дерматоскопия 1 зона</p>
+														<p class="text_fourteen_400">(распространенный процесс)</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">3700 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Прическа вечерняя (свадебная)</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">3000 ₽</p>
+													</div>
+												</div>
+					
+				
+											</div>
+										</div> 
+							            <div class="tabs__item">
+											<div class="price">
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Женская стрижка</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Стрижка бороды и усов</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Мужская стрижка</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Экспресс укладкаа</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Детский Стиль</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Укладка дневная</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Креативный Стиль</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">1200 ₽</p>
+													</div>
+												</div>
+					
+				
+												<div class="price_block">
+													<div class="price_text">
+														<p class="text_eighteen_500 text_bold">Прическа вечерняя (свадебная)
+														</p>
+														<p class="text_fourteen_400">Короткие волосы</p>
+													</div>
+													<div class="price_point">
+														<p class="text_twenty_600 text_align_center text_price_point">3000 ₽</p>
+													</div>
+												</div>
+					
+				
+											</div>
+										</div> 
+							         </div> 
+						        </div>
+						     
+						
 	                </section>
-	
 
-	                <section class="masters">
-	                    
-	                        <h1>Мастера</h1>
-	                        <p class="text_sexteen_400">Дружная команда настоящих профессионалов</p>
-	                        <div class="masters_team">
-	
 
-	                              <button class="photo_block">
-	                                <div class="but_ol">
-	                                 <div class="button-overlay"></div>
-	                                     <img src="./images/krasnova_elena.png" alt="Image" class="image_class_photo">
-	                                </div>
-	                                <p class="text_eighteen_600 text_bold">Краснова Ирина</p>
-	                                <p class="text_fourteen_400">Мастер ногтевого сервиса</p>
-	                                <p class="text_twelve_300">ОПЫТ РАБОТЫ 5 ЛЕТ</p>
-	                            </button>
-	                            <button class="photo_block">
-	                                <img src="./images/kalilova_zhanna.png" alt="Image" class="image_class_photo">
-	                                <p class="text_eighteen_600  text_bold">Калилова Жанна</p>
-	                                <p class="text_fourteen_400">Визажист-стилист</p>
-	                                <p class="text_twelve_300">ОПЫТ РАБОТЫ 5 ЛЕТ</p>
-	                            </button>
-	                            <button class="photo_block">
-	                                <img src="./images/kiseleva_alina.png" alt="Image" class="image_class_photo">
-	                                <p class="text_eighteen_600  text_bold">Киселева Алина</p>
-	                                <p class="text_fourteen_400">Парикмахер</p>
-	                                <p class="text_twelve_300">ОПЫТ РАБОТЫ 5 ЛЕТ</p>
-	                            </button>
-	                            <button class="photo_block">
-	                                <img src="./images/ivanova_elena.png" alt="Image" class="image_class_photo">
-	                                <p class="text_eighteen_600  text_bold">Иванова Елена</p>
-	                                <p class="text_fourteen_400">Мастер ногтевого сервиса</p>
-	                                <p class="text_twelve_300">ОПЫТ РАБОТЫ 5 ЛЕТ</p>
-	                            </button>
-	                      </div>
-	                </section>
-	
+					<p><a name="masters"></a></p>
+					<section class="masters">
+						<h1>Мастера</h1>
+								<p class="text_sexteen_400">Дружная команда настоящих профессионалов</p>
+								        <div class="masters_team"> 
+					                        
+								            <div class="master_info"> 
+									            <div class="master_photoblock">
+										         <img src="./images/krasnova_elena.png">
+									             </div>
+									             <div class="photo_block_text"> 	                                
+										            <p class="text_eighteen_600 text_bold">Краснова Ирина</p> 
+										            <p class="text_fourteen_400">Мастер ногтевого сервиса</p>
+										            <p class="text_twelve_300">ОПЫТ РАБОТЫ 5 ЛЕТ</p>
+									            </div>
+								            </div>
+					                        
+					                        <div class="master_info"> 
+											    <div class="master_photoblock">
+													<img src="./images/kalilova_zhanna.png">
+											    </div>
+												<div class="photo_block_text"> 	                                
+													  <p class="text_eighteen_600 text_bold">Калилова Жанна</p> 
+													  <p class="text_fourteen_400">Визажист-стилист</p>
+													<div clsss="master__text">
+														<p class="text_twelve_300">ОПЫТ РАБОТЫ 5 ЛЕТ</p>  
+													</div>
+												</div>
+					                        </div>
 
-	                <section class="works">
-	
+											<div class="master_info"> 
+											    <div class="master_photoblock">
+												  <img src="./images/kiseleva_alina.png">
+											    </div>
+												<div class="photo_block_text"> 	                                
+														<p class="text_eighteen_600 text_bold">Киселева Алина</p> 
+														<p class="text_fourteen_400">Парикмахер</p>
+														<p class="text_twelve_300">ОПЫТ РАБОТЫ 5 ЛЕТ</p>
+												</div>
+					                        </div>
+											
+											<div class="master_info"> 
+											    <div class="master_photoblock">
+												  <img src="./images/ivanova_elena.png">
+											    </div>
+												<div class="photo_block_text"> 	                                
+														<p class="text_eighteen_600 text_bold">Иванова Елена</p> 
+														<p class="text_fourteen_400">Мастер ногтевого сервиса</p>
+														<p class="text_twelve_300">ОПЫТ РАБОТЫ 5 ЛЕТ</p>
+												</div>
+					                        </div>
+								 
+								     	</div>
 
-	                    <div class="head_works">
-	                       <div class="our">
-	                            <h1>Наши работы</h1>
-	                        </div>
-	                       
-	                        <div class="left_right_pos">
-	                            <div class="ellipse">
-	                                <img src="./images/left.png" alt="Image" class="left_right">
-	                            </div>
-	                            <div class="ellipse">
-	                                <img src="./images/right.png" alt="Image" class="left_right">
-	                            </div>
-	                        </div>
-	                    </div>
-	                    
-	                    <div class="work_position">
-	                        <div class="our_works">
-	                                <button class="photo_block">
-	                                   <div class="button-overlay"></div>
-	                                        <img src="./images/work1.png" alt="Image" class="image_class_photo">
-	                                </button>
-	
+					</section>
 
-	
+					<p><a name="section"></a></p>
+				<section class="section">
+					<div class="container">
 
-	                            <button class="photo_block">
-	                               <div class="button-overlay"></div>
-	                                    <img src="./images/work2.png" alt="Image" class="image_class_photo">
-	                            </button>
-	
+						<div class="section__header">
+							<div class="our">
+								<h1>Наши работы</h1>
+							</div>
+								<div class="section__actions">
+									<button class="slider-prev"><img src="./images/left.png" alt="Image" class="Prev"></button>
+									<button class="slider-next"><img src="./images/right.png" alt="Image" class="Next"></button>
+								</div>
 
-	                            <button class="photo_block">
-	                               <div class="button-overlay"></div>
-	                                    <img src="./images/work3.png" alt="Image" class="image_class_photo">
-	                            </button>
-	
+						</div>
+						
+						<div class="section__inner">
 
-	                            <button class="photo_block">
-	                               <div class="button-overlay"></div>
-	                                    <img src="./images/work4.png" alt="Image" class="image_class_photo">
-	                            </button>
-	                        </div>
-	                    </div>
-	                
-	                </section>
-	
+							<div class="slider">
+								<div class="slider__item">
+									<a data-fancybox="gallery" href="./images/work1.png"><img src="./images/work1.png" alt=""></a>
+								</div>
+
+								<div class="slider__item">
+									<a data-fancybox="gallery" href="./images/work2.png"><img src="./images/work2.png" alt=""></a>
+								</div>
+
+								<div class="slider__item">
+									<a data-fancybox="gallery" href=./images/work3.png""><img src="./images/work3.png" alt=""></a>
+								</div>
+
+								<div class="slider__item">
+									<a data-fancybox="gallery" href="./images/work4.png"><img src="./images/work4.png" alt=""></a>
+								</div>
+								<div class="slider__item">
+									<a data-fancybox="gallery" href="./images/work4.png"><img src="./images/work4.png" alt=""></a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</section>
+				
 
 	                <section class="brands">
 	
-
+                      <div class="brands-box">
 	                    <div class="brands_text">
 	                        <p class="text_sixteen_400">Бренды, которые мы используем в работе</p>
 	                    </div>    
-	
 
 	                    <div class="brands_logo">
 	                        <img src="./images/brand1.png" alt="" class="brands_logo_style">
@@ -377,10 +602,13 @@
 	                        <img src="./images/brand3.png" alt="" class="brands_logo_style">
 	                        <img src="./images/brand4.png" alt="" class="brands_logo_style">
 	                        <img src="./images/brand5.png" alt="" class="brands_logo_style">
-	                    </div>    
+	                    </div> 
+					  </div>
+   
 	                </section>
-	
+		
 
+					<p><a name="contacts"></a></p>
 	                <section class="contacts">
 	                    <div class="contacts_info">
 	                        <h1>Контакты</h1>
@@ -423,11 +651,12 @@
 
 	                </section>
 	                
-	            </div>
-	
 
-	
 
+
+
+
+	            </section>
 	
 
 	        </main>
@@ -456,6 +685,31 @@
 	        </footer>
 	    </div>
 	
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+		<script src="./js/expandable.js" type="module"></script>
+
+		<script src="./js/tabs.js" type="module"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+		<script src="./js/galerey.js" type="module"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+		
+		<!-- <script src="./js/main.js" type="module"></script> -->
+		<!--<script src="./js/todo.js"></script>-->
+	
+		
+		<!------------------------------------(Expandable Text)-(Tabs)---------->
+		
+		
+		<!-------------------------------------(Tabs)---------->
+		
+
+		<!------------------------------------Галерея фото--------->		
+
+
+		
 	</body>
 	</html>
